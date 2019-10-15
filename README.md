@@ -14,7 +14,7 @@ Create a mockup website as seen in the [reference image folder](./images_referen
     - Card background color: #e0ddb2
     - Card and aside borders: #dad6ab
     - Color used for nav and footer: #016690
-* Use the images in the [assets folder](./assets) for the header and cards.
+* Use the images in the [images folder](./src/images) for the header and cards.
 
 ![mockup-image-mobile](./images_reference/mobile1.png)
 
