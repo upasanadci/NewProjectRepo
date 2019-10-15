@@ -9691,7 +9691,8 @@ ul li {
   list-style: none;
   padding: 1rem;
 }
-ul li a {
+
+nav a {
   color: #0e749e;
 }
 
@@ -9749,6 +9750,16 @@ main aside {
 main aside,
 main article {
   padding: 1rem;
+}
+
+footer {
+  background-color: #0e749e;
+}
+footer ul {
+  margin: 0;
+}
+footer a {
+  color: #fff;
 }
 
 @media screen and (min-width: 768px) {
