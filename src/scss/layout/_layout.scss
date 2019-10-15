@@ -6,9 +6,12 @@ ul {
   li {
     list-style: none;
     padding: $tiny;
-    a {
-      color: $primary-color;
-    }
+  }
+}
+
+nav {
+  a {
+    color: $primary-color;
   }
 }
 
@@ -70,6 +73,16 @@ main {
   article {
     padding: $tiny;
   }
+}
+
+footer {
+    background-color: $primary-color;
+    ul {
+        margin: 0;
+    }
+    a {
+        color: $tertiary-color;
+    }
 }
 
 @media screen and (min-width: $tablet) {
