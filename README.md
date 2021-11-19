@@ -4,6 +4,7 @@ Create a mockup website as seen in the [reference image folder](./images_referen
 
 **Instructions**: 
 
+* To run this project, use `npm run start`
 * Use sass to create the mockup. 
 * Make use of nesting and variables where possible.
 * Make sure to design for mobile first! 
