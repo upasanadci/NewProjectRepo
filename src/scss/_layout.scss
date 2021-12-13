@@ -1,0 +1,80 @@
+nav {
+  a {
+    color: $primary-color;
+  }
+}
+
+header {
+  height: $huge;
+  background-image: url('../../images/header.jpg');
+  background-size: cover;
+  text-align: center;
+}
+
+.card {
+  background-color: $border-color;
+  border: $border-size solid $border-color;
+  border-radius: 5px;
+
+  .img {
+    background-size: cover;
+    height: $large;
+    width: 100%;
+    background-position: center;
+  }
+}
+
+main {
+  aside {
+    border: $border-size solid $border-color;
+  }
+}
+
+footer {
+  background-color: $primary-color;
+  a {
+    color: white;
+  }
+}
+
+// @media screen and (min-width: $tablet) {
+//   .card {
+//     flex-flow: row nowrap;
+//     align-items: flex-start;
+//     width: 80%;
+//     margin: 0.5rem;
+//     &-text {
+//       padding: 0 $tiny $tiny $tiny;
+//     }
+//   }
+
+//   nav {
+//     ul {
+//       justify-content: flex-end;
+//     }
+//   }
+
+//   main {
+//     flex-flow: row;
+//     aside {
+//       width: 25%;
+//     }
+//     article {
+//       width: 50%;
+//     }
+//   }
+// }
+
+// @media screen and (min-width: $desktop) {
+//   .cards {
+//     flex-direction: row;
+//     justify-content: center;
+//     text-align: center;
+//   }
+//   .card {
+//     flex-basis: 1;
+//     .img {
+//       width: 44%;
+//     }
+//   }
+// }
