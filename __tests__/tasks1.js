@@ -1,87 +1,84 @@
- const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer");
 const path = require('path');
+const fs = require('fs');
+
 let browser;
 let page;
-            
+
 beforeAll(async () => {
-   browser = await puppeteer.launch()
+    browser = await puppeteer.launch({ headless: true })
     page = await browser.newPage();
     await page.goto('file://' + path.resolve('./src/index.html'))
 });
 
-afterAll(async () => {
-    await browser.close()
-}); 
+afterAll((done) => {
+    try {
+        this.puppeteer.close();
+    } catch (e) { }
+    done();
+});
 
-
-
-describe("1-Sass should be used .", () => {
-    
-    test("styles/main.css dir should be compiled ", async () => {
-        const fs = require('fs');
-        const dir = fs.readFileSync(__dirname + "/../src/styles/main.css", "utf8");
-        expect(dir).toBeTruthy();
+describe('css', () => {
+    it("Should generate compiled css", async () => {
+        const cssStylesheet = fs
+            .readFileSync(path.resolve('./src/styles/main.css'))
+            .toString("utf-8");
+        expect(cssStylesheet).toBeTruthy();
     });
-    })   
-    
+});
 
-describe("2.Nesting and variables .", () => {
+describe('Nav', () => {
+    it("anchor tags inside `nav` should have a color of #016690", async () => {
+        const nav = await page.$eval('nav a', el => getComputedStyle(el).color);
+        expect(nav).toBe('rgb(14, 116, 158)');
+    });
+});
 
-    test("variables should be used ", async () => {
-        const fs = require('fs');
-        const dir = fs.readFileSync(__dirname + "/../src/scss/variables/variables.scss", "utf8");
-        expect(dir.includes("$primary-color: ") || dir.includes("$primary-color: ")).toBeTruthy();  
-        expect(dir.includes("$secondary-color") || dir.includes("$secondary-color")).toBeTruthy();  
+describe('Card', () => {
+    it("`.card` should be of #e0ddb2 background color", async () => {
+        const cards = await page.$eval('.card', el => getComputedStyle(el).backgroundColor);
+        expect(cards).toBe('rgb(224, 221, 178)');
+    });
+});
+describe('Card and aside', () => {
+    it("`.card and aside` should have a border color of #dad6ab", async () => {
+        const cardsAndAside = await page.$eval('.card, aside', el => getComputedStyle(el).border);
+        expect(cardsAndAside).toMatch(/rgb\(224, 221, 178\)/);
+    });
+});
+
+describe('Images', () => {
+    it("Page should display images from the images folder using css `background-image` property", async () => {
+        const images = await page.$$eval('*', el => Array.from(el).map(e => getComputedStyle(e).getPropertyValue('background-image')));
+        expect(images.some(e => e.match(/images/))).toBe(true);
+    });
+});
+
+describe('Footer', () => {
+    it("`footer` should have a background color of #0e749e", async () => {
+        const footerAndNav = await page.$eval('footer', el => getComputedStyle(el).backgroundColor);
+        expect(footerAndNav).toBe('rgb(14, 116, 158)');
+    });
+});
+
+describe('Medium Screens - `.card` class', () => {
+    it("On 768px Breakpoint and and above cards should have their `flex-flow` property set to `nowrap`", async () => {
+        await page.setViewport({
+            width: 780,
+            height: 1024
         });
-    
-     test("Nesting should be used", async () => {
-        const nesting = await page.$eval('ul>li', el => getComputedStyle(el).padding);
-          expect(nesting).toBe('16px');
-        })      
+        const cards = await page.$eval('.card', el => getComputedStyle(el).flexFlow);
+        expect(cards).toMatch(/nowrap/);
     });
+});
 
-describe("3-design for mobil first  .", () => {
-    test("$desktop screen should be 1025px ", async () => {
-        const fs = require('fs');
-        const  variablesDir= fs.readFileSync(__dirname + "/../src/scss/variables/variables.scss", "utf8");
-          expect(variablesDir.includes("$desktop: 1025px;") || variablesDir.includes("$desktop: 1025px;")).toBeTruthy();  
-               })    
-
-    test("$tablet screen should be 768px ", async () => {
-        const fs = require('fs');
-        const  variablesDir= fs.readFileSync(__dirname + "/../src/scss/variables/variables.scss", "utf8");
-            expect(variablesDir.includes("$tablet: 768px;") || variablesDir.includes("$tablet: 768px;")).toBeTruthy();  
-                })   
-
-    test("@media with min-width for $tablet should be used ", async () => {
-      const fs = require('fs');
-      const dir = fs.readFileSync(__dirname + "/../src/scss/layout/_layout.scss", "utf8");
-        expect(dir.includes("@media screen and (min-width: $tablet) ") || dir.includes("@media screen and (min-width: $tablet) ")).toBeTruthy();  
-             })    
-        
-    test("@media with min-width for $desktop should be used ", async () => {
-        const fs = require('fs');
-        const dir = fs.readFileSync(__dirname + "/../src/scss/layout/_layout.scss", "utf8");
-            expect(dir.includes("@media screen and (min-width: $desktop) ") || dir.includes("@media screen and (min-width: $desktop) ")).toBeTruthy();
-             })          
-         })  
-
-
- describe("4-Colors for styling.", () => {
-   
-     test("Card background color should be  #e0ddb2 ", async () => {
-        const nesting = await page.$eval('.card', el => getComputedStyle(el).backgroundColor);
-        expect(nesting).toBe('rgb(224, 221, 178)');
-            
-             })    
-        
-     test("Card and aside borders should be #dad6ab", async () => {
-             const logoBg = await page.$eval('.card,aside', el => getComputedStyle(el).border);
-            expect(logoBg).toBe('2px solid rgb(224, 221, 178)');
-             })
-          
-    test("Color used for nav and footer should #016690 ", async () => {
-             const logoBg = await page.$eval('nav ,footer', el => getComputedStyle(el).color);
-             expect(logoBg).toBe('rgb(33, 37, 41)');
-             })         
-         })
+describe('Large Screens - Parent container `.cards`', () => {
+    it("On 1025px Breakpoint and and above `.cards` container should have its `justify-content` property set to `center`", async () => {
+        await page.setViewport({
+            width: 1030,
+            height: 1024
+        });
+        const cards = await page.$eval('.cards', el => getComputedStyle(el).justifyContent);
+        expect(cards).toMatch(/center/);
+    });
+});
