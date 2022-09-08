@@ -4,9 +4,8 @@
   "main": "index.html",
   "author": "Fran",
   "scripts": {
-    "test:build": "npm run build:styles",
-    "test:jest": "jest --runInBand --detectOpenHandles --forceExit",
-    "test": "concurrently npm:test:*",
+    "jest": "jest --runInBand --detectOpenHandles --forceExit",
+    "test": "run-s build:styles jest",
     "start": "run-p watch watch:styles",
     "build": "run-s clean clean:styles build:styles copy",
     "deploy": "run-s build publish",
