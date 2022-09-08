@@ -23,7 +23,7 @@ describe('css', () => {
         const cssStylesheet = fs
             .readFileSync(path.resolve('./src/styles/main.css'))
             .toString("utf-8");
-        expect(cssStylesheet).toBeTruthy();
+        expect(cssStylesheet).toContain("@media");
     });
 });
 
