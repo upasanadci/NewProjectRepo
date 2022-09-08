@@ -4,8 +4,9 @@
   "main": "index.html",
   "author": "Fran",
   "scripts": {
-    "jest": "jest --detectOpenHandles --forceExit",
-    "test": "run-s build:styles jest",
+    "jest": "jest --runInBand --detectOpenHandles --forceExit",
+    "pre-test": "run-s build:styles",
+    "test": "npm run pre-test && npm run jest ",
     "start": "run-p watch watch:styles",
     "build": "run-s clean clean:styles build:styles copy",
     "deploy": "run-s build publish",
@@ -27,6 +28,7 @@
     "sass-true": "^6.1.0"
   },
   "devDependencies": {
+    "concurrently": "^7.4.0",
     "gh-pages": "^3.2.3",
     "jest": "^29.0.2",
     "puppeteer": "^17.1.2"
