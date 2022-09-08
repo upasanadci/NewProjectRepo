@@ -4,7 +4,7 @@
   "main": "index.html",
   "author": "Fran",
   "scripts": {
-    "test": "npm run build:styles & jest --forceExit",
+    "test": "npm run build:styles & jest --runInBand --detectOpenHandles --forceExit",
     "start": "run-p watch watch:styles",
     "build": "run-s clean clean:styles build:styles copy",
     "deploy": "run-s build publish",
