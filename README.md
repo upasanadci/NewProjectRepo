@@ -13,7 +13,7 @@ Create a mockup website as seen in the [reference image folder](./images_referen
 
 * Using Flexbox change how elements are displayed on the page depending on the screen size.
 * Breakpoints:
-    - 768px - tablet (set the `.card`'s flex-flow to row nowrap)
+    - 768px - tablet (set the `.card` flex-flow to row nowrap)
     - 1024px - desktop (set the parent container`.cards` justify-content to center)
 
 * Colors for styling: 
