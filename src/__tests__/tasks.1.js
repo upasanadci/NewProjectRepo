@@ -9,7 +9,7 @@ beforeAll(async () => {
     browser = await puppeteer.launch({ headless: true })
     page = await browser.newPage();
     await page.goto('file://' + path.resolve('./src/index.html'))
-});
+}, 30000);
 
 afterAll((done) => {
     try {
@@ -40,6 +40,7 @@ describe('Card', () => {
         expect(cards).toBe('rgb(224, 221, 178)');
     });
 });
+
 describe('Card and aside', () => {
     it("`.card and aside` should have a border color of #dad6ab", async () => {
         const cardsAndAside = await page.$eval('.card, aside', el => getComputedStyle(el).border);
