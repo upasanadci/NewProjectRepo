@@ -1,14 +1,3 @@
-ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: $medium;
-  li {
-    list-style: none;
-    padding: $tiny;
-  }
-}
-
 nav {
   a {
     color: $primary-color;
@@ -17,41 +6,15 @@ nav {
 
 header {
   height: $huge;
-  background-image: url("../../images/header.jpg");
+  background-image: url('../../images/header.jpg');
   background-size: cover;
   text-align: center;
-  padding: $small;
-  margin-bottom: $tiny;
-}
-
-.cards,
-.card {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
 }
 
 .card {
-  padding: $tiny;
-  background-color: $secondary-color;
-  margin: $tiny;
-  border: $border-size solid $secondary-color;
+  background-color: $border-color;
+  border: $border-size solid $border-color;
   border-radius: 5px;
-  &-text {
-    padding-top: $tiny;
-  }
-
-  .img-mountain {
-    background-image: url("../../images/mountain.jpg");
-  }
-
-  .img-surfer {
-    background-image: url("../../images/surfer.jpg");
-  }
-
-  .img-tree {
-    background-image: url("../../images/tree.jpg");
-  }
 
   .img {
     background-size: cover;
@@ -62,70 +25,14 @@ header {
 }
 
 main {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  margin: $tiny;
   aside {
-    border: $border-size solid $secondary-color;
-  }
-  aside,
-  article {
-    padding: $tiny;
+    border: $border-size solid $border-color;
   }
 }
 
 footer {
-    background-color: $primary-color;
-    ul {
-        margin: 0;
-    }
-    a {
-        color: $tertiary-color;
-    }
-}
-
-@media screen and (min-width: $tablet) {
-  .card {
-    flex-flow: row nowrap;
-    align-items: flex-start;
-    width: 80%;
-    margin: 0.5rem;
-    &-text {
-      padding: 0 $tiny $tiny $tiny;
-    }
-  }
-
-  nav {
-    ul {
-      justify-content: flex-end;
-    }
-  }
-
-  main {
-    flex-flow: row nowrap;
-    aside {
-      width: 25%;
-    }
-    article {
-      width: 50%;
-    }
-  }
-}
-
-@media screen and (min-width: $desktop) {
-  .cards {
-    flex-flow: row wrap;
-    justify-content: center;
-  }
-
-  .card {
-    width: 45%;
-    &-text {
-      width: 60%;
-    }
-    .img {
-      width: 40%;
-    }
+  background-color: $primary-color;
+  a {
+    color: white;
   }
 }

@@ -1,9 +1,10 @@
-h1, article {
+h1,
+article {
   font-size: $small;
 }
 
 p {
-    font-size: $tiny;
+  font-size: $tiny;
 }
 
 a {
@@ -13,6 +14,8 @@ a {
 
 .card-text,
 a,
-h1, aside, article {
+h1,
+aside,
+article {
   font-family: $primary-font;
 }
