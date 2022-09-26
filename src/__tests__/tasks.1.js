@@ -1,6 +1,7 @@
 const puppeteer = require("puppeteer");
 const path = require('path');
 const fs = require('fs');
+const { execSync } = require('child_process');
 
 let browser;
 let page;
@@ -8,7 +9,7 @@ let page;
 beforeAll(async () => {
     browser = await puppeteer.launch({ headless: true })
     page = await browser.newPage();
-    await page.goto('file://' + path.resolve('./src/index.html'))
+    await page.goto('file://' + path.resolve('./src/index.html'));
 }, 30000);
 
 afterAll((done) => {
@@ -19,6 +20,9 @@ afterAll((done) => {
 });
 
 describe('css', () => {
+    setTimeout(() => {
+        execSync('npm run build:styles');
+    })
     it("Should generate compiled css", async () => {
         const cssStylesheet = fs
             .readFileSync(path.resolve('./src/styles/main.css'))
@@ -40,7 +44,6 @@ describe('Card', () => {
         expect(cards).toBe('rgb(224, 221, 178)');
     });
 });
-
 describe('Card and aside', () => {
     it("`.card and aside` should have a border color of #dad6ab", async () => {
         const cardsAndAside = await page.$eval('.card, aside', el => getComputedStyle(el).border);
