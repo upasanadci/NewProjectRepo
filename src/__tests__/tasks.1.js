@@ -20,10 +20,10 @@ afterAll((done) => {
 });
 
 describe('css', () => {
-    setTimeout(() => {
-        execSync('npm run build:styles');
-    })
     it("Should generate compiled css", async () => {
+        setTimeout(() => {
+            execSync('npm run build:styles');
+        })
         const cssStylesheet = fs
             .readFileSync(path.resolve('./src/styles/main.css'))
             .toString("utf-8");
