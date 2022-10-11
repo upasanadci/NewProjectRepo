@@ -1,5 +1,8 @@
 // This is where you can import other stylesheets or write your scss code
 // import your sass partials here..
+@import './variables/variables';
+@import './typography/typography';
+@import './layout/layout';
 
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
