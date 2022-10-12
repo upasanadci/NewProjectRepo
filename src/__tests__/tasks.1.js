@@ -19,8 +19,8 @@ afterAll((done) => {
     done();
 });
 
-describe('css', () => {
-    it("Should generate compiled css", async () => {
+describe('Sass', () => {
+    it("SCSS should be compiled into CSS in the file `/src/styles/main.css`", async () => {
         setTimeout(() => {
             execSync('npm run build:styles');
         })
@@ -31,34 +31,38 @@ describe('css', () => {
     });
 });
 
-describe('Nav', () => {
-    it("anchor tags inside `nav` should have a color of #016690", async () => {
+describe('Navigation', () => {
+    it("Link tags in `nav` should use the text color `#016690`", async () => {
         const nav = await page.$eval('nav a', el => getComputedStyle(el).color);
         expect(nav).toBe('rgb(14, 116, 158)');
     });
 });
 
-describe('Card', () => {
-    it("`.card` should be of #e0ddb2 background color", async () => {
+describe('Cards', () => {
+    it("`.card` should have background color `#e0ddb2`", async () => {
         const cards = await page.$eval('.card', el => getComputedStyle(el).backgroundColor);
         expect(cards).toBe('rgb(224, 221, 178)');
     });
 });
-describe('Card and aside', () => {
-    it("`.card and aside` should have a border color of #dad6ab", async () => {
-        const cardsAndAside = await page.$eval('.card, aside', el => getComputedStyle(el).border);
+describe('Cards and aside', () => {
+    it("`.card` should have border color `#dad6ab`", async () => {
+        const cardsAndAside = await page.$eval('.card', el => getComputedStyle(el).border);
+        expect(cardsAndAside).toMatch(/rgb\(224, 221, 178\)/);
+    });
+    it("`aside` should have border color `#dad6ab`", async () => {
+        const cardsAndAside = await page.$eval('aside', el => getComputedStyle(el).border);
         expect(cardsAndAside).toMatch(/rgb\(224, 221, 178\)/);
     });
 });
 
 describe('Images', () => {
-    it("Page should display images from the images folder using css `background-image` property", async () => {
+    it("Page should background images provided in the `src/images` folder", async () => {
         const images = await page.$$eval('*', el => Array.from(el).map(e => getComputedStyle(e).getPropertyValue('background-image')));
         expect(images.some(e => e.match(/images\/mountain/))).toBe(true);
     });
 });
 
-describe('Medium Screens - `.card` class', () => {
+describe('Responsivity', () => {
     it("On 768px Breakpoint and and above `.card` should have its `width` property set to `80%`", async () => {
         await page.setViewport({
             width: 780,
@@ -67,9 +71,6 @@ describe('Medium Screens - `.card` class', () => {
         const cards = await page.$eval('.card', el => getComputedStyle(el).width);
         expect(cards).toBe('624px');
     });
-});
-
-describe('Large Screens - Parent container `.cards`', () => {
     it("On 1025px Breakpoint and and above `.cards` container should have its `justify-content` property set to `center`", async () => {
         await page.setViewport({
             width: 1030,

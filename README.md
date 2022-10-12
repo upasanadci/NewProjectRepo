@@ -8,14 +8,15 @@ Create a mockup website as seen in the [reference image folder](./images_referen
 **Instructions**: 
 
 * To run this project, use `npm run start`
-* Use sass to create the mockup. 
+* The starter code is in the `src` folder. Work in the existing files.
+* Write your styles using sass. 
 * Make use of nesting and variables where possible.
 * Make sure to design for mobile first!
 
 * Using Flexbox change how elements are displayed on the page depending on the screen size.
 * Breakpoints:
-    - 768px - tablet (set the `.card` width to 80%)
-    - 1024px - desktop (set the parent container`.cards` justify-content to center)
+    - 768px - tablet (the width of `.card` should be 80%)
+    - 1024px - desktop (`.cards` container should center its childeren using justify-content)
 
 * Colors for styling: 
     - Card background color: #e0ddb2
