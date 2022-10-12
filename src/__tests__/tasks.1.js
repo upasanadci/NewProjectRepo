@@ -1,12 +1,14 @@
 const puppeteer = require("puppeteer");
 const path = require('path');
 const fs = require('fs');
-const { execSync } = require('child_process');
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
 
 let browser;
 let page;
 
 beforeAll(async () => {
+    await exec('npm run build-for-test:styles');
     browser = await puppeteer.launch({ headless: true })
     page = await browser.newPage();
     await page.goto('file://' + path.resolve('./src/index.html'));
@@ -21,7 +23,6 @@ afterAll((done) => {
 
 describe('Sass', () => {
     it("SCSS should be compiled into CSS in the file `/src/styles/main.css`", async () => {
-        execSync('npm run build:styles');
         const cssStylesheet = fs
             .readFileSync(path.resolve('./src/styles/main.css'))
             .toString("utf-8");
