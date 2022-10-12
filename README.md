@@ -14,7 +14,7 @@ Create a mockup website as seen in the [reference image folder](./images_referen
 * Make sure to design for mobile first!
 
 * Using Flexbox change how elements are displayed on the page depending on the screen size.
-* Style the class of `.card` with the color variable `$secondary-color`
+* Style the class of `.card` with the color variable `$secondary-color` as the background color.
 * Style the class of `.card` with `$border-size` and `$secondary-color` variables for the border.
 * `aside` should have its border property defined using the `$border-size` and `$secondary-color` variables.
 
