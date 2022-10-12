@@ -55,7 +55,7 @@ describe('Cards and aside', () => {
 });
 
 describe('Images', () => {
-    it("Page should background images provided in the `src/images` folder", async () => {
+    it("Page should use the background images provided in the `src/images` folder", async () => {
         const images = await page.$$eval('*', el => Array.from(el).map(e => getComputedStyle(e).getPropertyValue('background-image')));
         expect(images.some(e => e.match(/images\/mountain/))).toBe(true);
     });
