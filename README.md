@@ -68,23 +68,17 @@ Create a mockup website as seen in the [reference image folder](./images_referen
 | :-------------------------------------: | :--------------------------------------------------------------------------------------- |
 | ![Status](../../blob/badges/.github/badges/autograding/status4.svg) | Page should display images from the images folder using css `background-image` property |
 
-### Footer
-
-|                 Status                  | Check                                                                                    |
-| :-------------------------------------: | :--------------------------------------------------------------------------------------- |
-| ![Status](../../blob/badges/.github/badges/autograding/status5.svg) | `footer` should have a background color of #0e749e |
-
 ### Medium Screens - `.card` class
 
 |                 Status                  | Check                                                                                    |
 | :-------------------------------------: | :--------------------------------------------------------------------------------------- |
-| ![Status](../../blob/badges/.github/badges/autograding/status6.svg) | On 768px Breakpoint and and above `.card` should have its `width` property set to `80%` |
+| ![Status](../../blob/badges/.github/badges/autograding/status5.svg) | On 768px Breakpoint and and above `.card` should have its `width` property set to `80%` |
 
 ### Large Screens - Parent container `.cards`
 
 |                 Status                  | Check                                                                                    |
 | :-------------------------------------: | :--------------------------------------------------------------------------------------- |
-| ![Status](../../blob/badges/.github/badges/autograding/status7.svg) | On 1025px Breakpoint and and above `.cards` container should have its `justify-content` property set to `center` |
+| ![Status](../../blob/badges/.github/badges/autograding/status6.svg) | On 1025px Breakpoint and and above `.cards` container should have its `justify-content` property set to `center` |
 
 
 
