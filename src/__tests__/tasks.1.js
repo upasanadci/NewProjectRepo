@@ -27,7 +27,7 @@ describe('css', () => {
         const cssStylesheet = fs
             .readFileSync(path.resolve('./src/styles/main.css'))
             .toString("utf-8");
-        expect(cssStylesheet).toContain("@media");
+        expect(cssStylesheet).toContain("images/mountain");
     });
 });
 
@@ -54,14 +54,7 @@ describe('Card and aside', () => {
 describe('Images', () => {
     it("Page should display images from the images folder using css `background-image` property", async () => {
         const images = await page.$$eval('*', el => Array.from(el).map(e => getComputedStyle(e).getPropertyValue('background-image')));
-        expect(images.some(e => e.match(/images/))).toBe(true);
-    });
-});
-
-describe('Footer', () => {
-    it("`footer` should have a background color of #0e749e", async () => {
-        const footerAndNav = await page.$eval('footer', el => getComputedStyle(el).backgroundColor);
-        expect(footerAndNav).toBe('rgb(14, 116, 158)');
+        expect(images.some(e => e.match(/images\/mountains/))).toBe(true);
     });
 });
 
