@@ -1,6 +1,4 @@
 # Sassy Website
-[![Status overview badge](../../blob/badges/.github/badges/autograding/badge.svg)](#-results)
-
 
 
 Create a mockup website as seen in the [reference image folder](./images_reference).
