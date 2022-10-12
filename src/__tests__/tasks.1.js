@@ -21,9 +21,7 @@ afterAll((done) => {
 
 describe('Sass', () => {
     it("SCSS should be compiled into CSS in the file `/src/styles/main.css`", async () => {
-        setTimeout(() => {
-            execSync('npm run build:styles');
-        })
+        execSync('npm run build:styles');
         const cssStylesheet = fs
             .readFileSync(path.resolve('./src/styles/main.css'))
             .toString("utf-8");
