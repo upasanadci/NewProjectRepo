@@ -20,12 +20,10 @@ afterAll((done) => {
 });
 
 describe('css', () => {
+    setTimeout(() => {
+        execSync('npm run build:styles');
+    })
     it("Should generate compiled css", async () => {
-        setTimeout(() => {
-            try {
-                execSync('npm run build:styles');
-            } catch (error) {}
-        })
         const cssStylesheet = fs
             .readFileSync(path.resolve('./src/styles/main.css'))
             .toString("utf-8");
@@ -68,13 +66,13 @@ describe('Footer', () => {
 });
 
 describe('Medium Screens - `.card` class', () => {
-    it("On 768px Breakpoint and and above cards should have their `flex-flow` property set to `nowrap`", async () => {
+    it("On 768px Breakpoint and and above `.card` should have its `width` property set to `80%`", async () => {
         await page.setViewport({
             width: 780,
             height: 1024
         });
-        const cards = await page.$eval('.card', el => getComputedStyle(el).flexFlow);
-        expect(cards).toMatch(/nowrap/);
+        const cards = await page.$eval('.card', el => getComputedStyle(el).width);
+        expect(cards).toBe('624px');
     });
 });
 
