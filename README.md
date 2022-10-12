@@ -78,7 +78,7 @@ Create a mockup website as seen in the [reference image folder](./images_referen
 
 |                 Status                  | Check                                                                                    |
 | :-------------------------------------: | :--------------------------------------------------------------------------------------- |
-| ![Status](../../blob/badges/.github/badges/autograding/status6.svg) | On 768px Breakpoint and and above cards should have their `flex-flow` property set to `nowrap` |
+| ![Status](../../blob/badges/.github/badges/autograding/status6.svg) | On 768px Breakpoint and and above `.card` should have its `width` property set to `80%` |
 
 ### Large Screens - Parent container `.cards`
 
