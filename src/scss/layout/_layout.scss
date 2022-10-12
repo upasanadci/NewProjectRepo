@@ -1,0 +1,35 @@
+nav {
+  a {
+    color: $primary-color;
+  }
+}
+
+header {
+  height: $huge;
+  background-image: url('../../images/header.jpg');
+  background-size: cover;
+  text-align: center;
+}
+
+.card {
+  border-radius: 5px;
+
+  .img {
+    background-size: cover;
+    height: $large;
+    width: 100%;
+    background-position: center;
+  }
+}
+
+main {
+  aside {
+  }
+}
+
+footer {
+  background-color: $primary-color;
+  a {
+    color: white;
+  }
+}
