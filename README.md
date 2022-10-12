@@ -39,47 +39,43 @@ Create a mockup website as seen in the [reference image folder](./images_referen
 > This is what CodeBuddy found when running your code. It is to show you what you have achieved and to give you hints on how to complete the exercise.
 
 
-### css
+### Sass
 
 |                 Status                  | Check                                                                                    |
 | :-------------------------------------: | :--------------------------------------------------------------------------------------- |
-| ![Status](../../blob/badges/.github/badges/autograding/status0.svg) | Should generate compiled css |
+| ![Status](../../blob/badges/.github/badges/autograding/status0.svg) | SCSS should be compiled into CSS in the file `/src/styles/main.css` |
 
-### Nav
-
-|                 Status                  | Check                                                                                    |
-| :-------------------------------------: | :--------------------------------------------------------------------------------------- |
-| ![Status](../../blob/badges/.github/badges/autograding/status1.svg) | anchor tags inside `nav` should have a color of #016690 |
-
-### Card
+### Navigation
 
 |                 Status                  | Check                                                                                    |
 | :-------------------------------------: | :--------------------------------------------------------------------------------------- |
-| ![Status](../../blob/badges/.github/badges/autograding/status2.svg) | `.card` should be of #e0ddb2 background color |
+| ![Status](../../blob/badges/.github/badges/autograding/status1.svg) | Link tags in `nav` should use the text color `#016690` |
 
-### Card and aside
+### Cards
 
 |                 Status                  | Check                                                                                    |
 | :-------------------------------------: | :--------------------------------------------------------------------------------------- |
-| ![Status](../../blob/badges/.github/badges/autograding/status3.svg) | `.card and aside` should have a border color of #dad6ab |
+| ![Status](../../blob/badges/.github/badges/autograding/status2.svg) | `.card` should have background color `#e0ddb2` |
+
+### Cards and aside
+
+|                 Status                  | Check                                                                                    |
+| :-------------------------------------: | :--------------------------------------------------------------------------------------- |
+| ![Status](../../blob/badges/.github/badges/autograding/status3.svg) | `.card` should have border color `#dad6ab` |
+| ![Status](../../blob/badges/.github/badges/autograding/status4.svg) | `aside` should have border color `#dad6ab` |
 
 ### Images
 
 |                 Status                  | Check                                                                                    |
 | :-------------------------------------: | :--------------------------------------------------------------------------------------- |
-| ![Status](../../blob/badges/.github/badges/autograding/status4.svg) | Page should display images from the images folder using css `background-image` property |
+| ![Status](../../blob/badges/.github/badges/autograding/status5.svg) | Page should background images provided in the `src/images` folder |
 
-### Medium Screens - `.card` class
-
-|                 Status                  | Check                                                                                    |
-| :-------------------------------------: | :--------------------------------------------------------------------------------------- |
-| ![Status](../../blob/badges/.github/badges/autograding/status5.svg) | On 768px Breakpoint and and above `.card` should have its `width` property set to `80%` |
-
-### Large Screens - Parent container `.cards`
+### Responsivity
 
 |                 Status                  | Check                                                                                    |
 | :-------------------------------------: | :--------------------------------------------------------------------------------------- |
-| ![Status](../../blob/badges/.github/badges/autograding/status6.svg) | On 1025px Breakpoint and and above `.cards` container should have its `justify-content` property set to `center` |
+| ![Status](../../blob/badges/.github/badges/autograding/status6.svg) | On 768px Breakpoint and and above `.card` should have its `width` property set to `80%` |
+| ![Status](../../blob/badges/.github/badges/autograding/status7.svg) | On 1025px Breakpoint and and above `.cards` container should have its `justify-content` property set to `center` |
 
 
 
