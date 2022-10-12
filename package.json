@@ -25,7 +25,7 @@
     "puppeteer": "^18.0.3"
   },
   "autograding": {
-    "setup": "npm install && npm run build:styles && cd ./node_modules/puppeteer && npm run install"
+    "setup": "npm run install && npm run build:styles && cd ./node_modules/puppeteer && npm run install"
   },
   "repository": {
     "type": "git",
