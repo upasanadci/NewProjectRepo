@@ -23,7 +23,7 @@ describe('css', () => {
     it("Should generate compiled css", async () => {
         setTimeout(() => {
             try {
-                execSync('npm run build:styles');
+                execSync('npm i && npm run build:styles');
             } catch (error) {}
         })
         const cssStylesheet = fs
