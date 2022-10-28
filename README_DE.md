@@ -18,7 +18,7 @@ Erstelle eine Mockup-Website, wie sie im [Referenzbildordner](./images_reference
 
 * Haltepunkte:
     - 768px - Tablet (die Breite von `.card` sollte 80% betragen)
-    - 1024px - Desktop (der `.cards`-Container sollte seine Childs mit justify-content zentrieren)
+    - 1024px - Desktop (`children` des `.cards` Containers sollten mit der css-Eigenschaft `jusitify-content` zentriert werden)
 
 * Farben für das Styling:
     - Hintergrundfarbe der Karte: #e0ddb2
