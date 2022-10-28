@@ -1,4 +1,4 @@
-# Freche Website
+# Sassy Website
 
 
 Erstelle eine Mockup-Website, wie sie im [Referenzbildordner](./images_reference) zu sehen ist.
@@ -8,13 +8,13 @@ Erstelle eine Mockup-Website, wie sie im [Referenzbildordner](./images_reference
 * Um dieses Projekt zu starten, verwende `npm run start`.
 * Der Startcode befindet sich im Ordner `src`. Arbeite in den vorhandenen Dateien.
 * Schreibe deine Styles mit Sass.
-* Nutze Verschachtelungen und Variablen, wo es möglich ist.
+* Nutze nesting und Variablen, wo es möglich ist.
 * Achte darauf, dass du zuerst für Mobilgeräte designst!
 
 * Nutze Flexbox, um die Darstellung der Elemente auf der Seite je nach Bildschirmgröße zu ändern.
 * Elemente mit der Klasse `.card` sollten die Variable `$secondary-color` als Hintergrundfarbe verwenden.
 * Elemente mit der Klasse `.card` sollten die Variablen `$border-size` und `$secondary-color` für den Rahmen verwenden.
-* Bei "aside" sollte die Eigenschaft "border" mit den Variablen "$border-size" und "$secondary-color" definiert werden.
+* `aside` sollte die Eigenschaft `border` mit den Variablen `$border-size` und `$secondary-color` definiert werden.
 
 * Haltepunkte:
     - 768px - Tablet (die Breite von `.card` sollte 80% betragen)
